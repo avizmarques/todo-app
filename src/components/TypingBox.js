@@ -1,13 +1,30 @@
 import { useState } from "react";
 import CheckBox from "./CheckBox";
 
-export default function TypingBox() {
+export default function TypingBox({ addTodo }) {
   const [checked, setChecked] = useState(false);
+  const [todo, setTodo] = useState("");
 
   return (
-    <div className="w-1/3 bg-white rounded-md h-16 flex items-center px-6">
+    <div className="bg-white rounded-md h-16 flex items-center px-6 w-1/3">
       <CheckBox checked={checked} setChecked={setChecked} />
-      <input className="ml-4 focus:outline-none" />
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          addTodo({
+            todo,
+            checked,
+          });
+          setTodo("");
+          setChecked(false);
+        }}
+      >
+        <input
+          className="ml-4 focus:outline-none"
+          onChange={(e) => setTodo(e.target.value)}
+          value={todo}
+        />
+      </form>
     </div>
   );
 }
