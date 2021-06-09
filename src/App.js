@@ -11,6 +11,8 @@ function App() {
     setTodoList([...todoList, { ...todo, id: todoList.length + 1 }]);
   }
 
+  console.log(todoList);
+
   return (
     <div className="App">
       <header className="w-full">

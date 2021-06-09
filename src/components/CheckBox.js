@@ -2,7 +2,8 @@ import { ReactComponent as Check } from "../assets/icon-check.svg";
 
 export default function CheckBox({ checked, setChecked }) {
   return (
-    <div
+    <button
+      className="focus:outline-none"
       onClick={() => {
         setChecked(!checked);
       }}
@@ -14,6 +15,6 @@ export default function CheckBox({ checked, setChecked }) {
       ) : (
         <div className="rounded-full border-2 border-grayishBlue-light h-8 w-8" />
       )}
-    </div>
+    </button>
   );
 }

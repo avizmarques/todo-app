@@ -2,7 +2,7 @@ import TodoItem from "./TodoItem";
 
 export default function TodoList({ todoList, setTodoList }) {
   function removeTodo(id) {
-    const newList = todoList.splice(id - 1);
+    const newList = todoList.filter((todo) => (todo.id === id ? false : true));
     setTodoList(newList);
   }
 
@@ -11,9 +11,11 @@ export default function TodoList({ todoList, setTodoList }) {
       {todoList.map((todo) => (
         <TodoItem todo={todo} removeTodo={removeTodo} />
       ))}
-      <div className="bg-white h-16 flex items-center px-6">
-        <div className="text-sm">5 items left</div>
-      </div>
+      {todoList.length > 0 && (
+        <div className="bg-white h-16 flex items-center px-6">
+          <div className="text-sm">{todoList.length} item(s) left</div>
+        </div>
+      )}
     </div>
   );
 }

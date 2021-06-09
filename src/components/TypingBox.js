@@ -18,9 +18,10 @@ export default function TypingBox({ addTodo }) {
           setTodo("");
           setChecked(false);
         }}
+        className="w-full"
       >
         <input
-          className="ml-4 focus:outline-none"
+          className="ml-4 focus:outline-none w-full"
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
         />
