@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import TypingBox from "./components/TypingBox";
+import bg from "./assets/bg-desktop-light.jpg";
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="App relative">
+      <header className="w-full">
+        <img src={bg} alt="background" className="w-full" />
       </header>
+      <div className="flex flex-col items-center absolute bottom-4 w-full">
+        <TypingBox />
+      </div>
     </div>
   );
 }
