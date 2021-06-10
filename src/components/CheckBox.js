@@ -1,14 +1,23 @@
+import { useContext } from "react";
+import { ListContext } from "../App";
 import { ReactComponent as Check } from "../assets/icon-check.svg";
 
-export default function CheckBox({ checked, setChecked }) {
+export default function CheckBox({ todo }) {
+  const { list, setList } = useContext(ListContext);
+
+  const toggleChecked = async (id) => {
+    const newList = list.map((todo) =>
+      todo.id === id ? { ...todo, checked: !todo.checked } : todo
+    );
+    await setList(newList);
+  };
+
   return (
     <button
       className="focus:outline-none"
-      onClick={() => {
-        setChecked(!checked);
-      }}
+      onClick={() => toggleChecked(todo.id)}
     >
-      {checked ? (
+      {todo.checked ? (
         <div className="rounded-full h-8 w-8 flex justify-center items-center bg-gradient-to-br from-blue-light to-purple">
           <Check />
         </div>
