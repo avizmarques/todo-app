@@ -7,13 +7,13 @@ import { ReactComponent as Close } from "../assets/icon-cross.svg";
 export default function TodoItem({ todo }) {
   const { list, setList } = useContext(ListContext);
 
-  function removeTodo(id) {
+  const removeTodo = (id) => {
     const newList = list.filter((todo) => (todo.id === id ? false : true));
     setList(newList);
-  }
+  };
 
   return (
-    <div className="bg-white h-16 px-6 flex items-center justify-between border-b-2 border-grayishBlue-light">
+    <div className="bg-white h-16 px-6 flex items-center justify-between group">
       <div className="flex items-center">
         <CheckBox todo={todo} />
         <div
@@ -26,7 +26,7 @@ export default function TodoItem({ todo }) {
         </div>
       </div>
       <button
-        className="focus:outline-none"
+        className="focus:outline-none opacity-0 group-hover:opacity-100"
         onClick={() => removeTodo(todo.id)}
       >
         <Close />
