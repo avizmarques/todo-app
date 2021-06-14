@@ -18,6 +18,8 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 ### The challenge
 
+(provided by Frontend Mentor, along with jpg screenshots of how the app should look)
+
 Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
@@ -32,10 +34,13 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Live site](https://todo-app-two-ruddy.vercel.app/)
+- [Challenge page](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
 
 ## My process
+
+I started by separating the images into components and thinking how they will interlink. I thought as well about how I was going to manage the global state and decided that this would be a good time to use Context. I decided to use tailwind again, since I am much faster at styling with it.
+Then I coded the basic components without functionality but with basic styles, then added functionality. It was quite interesting to play around with the draggable items in the list. Lastly I added responsiveness and dark mode.
 
 ### Built with
 
