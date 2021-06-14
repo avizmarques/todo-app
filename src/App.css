@@ -9,3 +9,17 @@ body {
 .App {
   text-align: center;
 }
+
+.header {
+  background-size: cover;
+  background-image: url("./assets/bg-mobile-light.jpg");
+  height: 300px;
+}
+
+@media (min-width: 640px) {
+  .header {
+    background-image: url("./assets/bg-desktop-light.jpg");
+    background-size: cover;
+    height: 400px;
+  }
+}

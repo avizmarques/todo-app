@@ -51,63 +51,72 @@ export default function TodoList() {
   };
 
   return (
-    <div className="w-1/3 rounded-md overflow-hidden">
-      <ul>
-        {filter === "active"
-          ? activeList.map((todo, i) => (
-              <li
-                draggable
-                onDragStart={(e) => onDragStart(e, i)}
-                onDragOver={() => onDragOver(i)}
-                onDragEnd={() => onDragEnd()}
-                className={cn(
-                  "border-b-2",
-                  draggedOverIndex === i && "border-grayishBlue-dark"
-                )}
-              >
-                <TodoItem todo={todo} />
-              </li>
-            ))
-          : filter === "completed"
-          ? completedList.map((todo, i) => (
-              <li
-                draggable
-                onDragStart={(e) => onDragStart(e, i)}
-                onDragOver={() => onDragOver(i)}
-                onDragEnd={() => onDragEnd()}
-                className={cn(
-                  "border-b-2",
-                  draggedOverIndex === i && "border-grayishBlue-dark"
-                )}
-              >
-                <TodoItem todo={todo} />
-              </li>
-            ))
-          : list.map((todo, i) => (
-              <li
-                draggable
-                onDragStart={(e) => onDragStart(e, i)}
-                onDragOver={() => onDragOver(i)}
-                onDragEnd={() => onDragEnd()}
-                className={cn(
-                  "border-b-2",
-                  draggedOverIndex === i && "border-grayishBlue-dark"
-                )}
-              >
-                <TodoItem todo={todo} />
-              </li>
-            ))}
-      </ul>
+    <div>
+      <div className="rounded-md overflow-hidden shadow-xl">
+        <ul>
+          {filter === "active"
+            ? activeList.map((todo, i) => (
+                <li
+                  draggable
+                  onDragStart={(e) => onDragStart(e, i)}
+                  onDragOver={() => onDragOver(i)}
+                  onDragEnd={() => onDragEnd()}
+                  className={cn(
+                    "border-b-2",
+                    draggedOverIndex === i && "border-grayishBlue-dark"
+                  )}
+                >
+                  <TodoItem todo={todo} />
+                </li>
+              ))
+            : filter === "completed"
+            ? completedList.map((todo, i) => (
+                <li
+                  draggable
+                  onDragStart={(e) => onDragStart(e, i)}
+                  onDragOver={() => onDragOver(i)}
+                  onDragEnd={() => onDragEnd()}
+                  className={cn(
+                    "border-b-2",
+                    draggedOverIndex === i && "border-grayishBlue-dark"
+                  )}
+                >
+                  <TodoItem todo={todo} />
+                </li>
+              ))
+            : list.map((todo, i) => (
+                <li
+                  draggable
+                  onDragStart={(e) => onDragStart(e, i)}
+                  onDragOver={() => onDragOver(i)}
+                  onDragEnd={() => onDragEnd()}
+                  className={cn(
+                    "border-b-2",
+                    draggedOverIndex === i && "border-grayishBlue-dark"
+                  )}
+                >
+                  <TodoItem todo={todo} />
+                </li>
+              ))}
+        </ul>
+        {list.length > 0 && (
+          <div className="bg-white h-16 flex items-center justify-center sm:justify-between px-6 text-gray-400">
+            <div className="text-sm hidden sm:block">
+              {activeList.length} item(s) left
+            </div>
+            <FilterBar filter={filter} setFilter={setFilter} />
+            <button
+              className="text-sm hover:font-black hover:text-gray-800 focus:outline-none hidden sm:block"
+              onClick={clearCompleted}
+            >
+              Clear completed
+            </button>
+          </div>
+        )}
+      </div>
       {list.length > 0 && (
-        <div className="bg-white h-16 flex items-center justify-between px-6 text-gray-400">
-          <div className="text-sm">{activeList.length} item(s) left</div>
-          <FilterBar filter={filter} setFilter={setFilter} />
-          <button
-            className="text-sm hover:font-black hover:text-gray-800 focus:outline-none"
-            onClick={clearCompleted}
-          >
-            Clear completed
-          </button>
+        <div className="mt-8 mb-8 text-gray-400 text-sm">
+          Drag and drop to reorder list
         </div>
       )}
     </div>

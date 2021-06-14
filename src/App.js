@@ -1,6 +1,5 @@
 import { useState, createContext } from "react";
 import TypingBox from "./components/TypingBox";
-import bg from "./assets/bg-desktop-light.jpg";
 import "./App.css";
 import TodoList from "./components/TodoList";
 
@@ -16,19 +15,17 @@ function App() {
   return (
     <ListContext.Provider value={{ list: todoList, setList: setTodoList }}>
       <div className="App">
-        <header className="w-full">
-          <img src={bg} alt="background" className="w-full" />
-        </header>
-        <div className="relative">
-          <div className="flex flex-col items-center absolute bottom-24 w-full">
-            <div className="flex w-1/3">
-              <h1 className="text-5xl text-white font-bold mb-8">T O D O</h1>
-            </div>
+        <header className="header"></header>
+        <div className="relative w-full flex justify-center">
+          <div className="w-full px-4 md:px-12 xl:w-1/2 absolute bottom-20">
+            <h1 className="text-5xl text-white font-bold mb-8">T O D O</h1>
             <TypingBox />
           </div>
         </div>
-        <div className="w-full flex flex-col items-center mt-8 relative bottom-20">
-          <TodoList />
+        <div className="w-full flex justify-center relative">
+          <div className="w-full px-4 md:px-12 xl:w-1/2 absolute -top-12">
+            <TodoList />
+          </div>
         </div>
       </div>
     </ListContext.Provider>
