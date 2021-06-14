@@ -17,11 +17,11 @@ export default function TypingBox() {
   };
 
   return (
-    <div className="bg-white rounded-md h-16 flex items-center px-6 w-full">
+    <div className="bg-white dark:bg-blue-desaturated dark:text-grayishBlue rounded-md h-16 flex items-center px-6 w-full">
       <CheckBox todo={newTodo} />
       <form onSubmit={(e) => addTodo(e)} className="w-full">
         <input
-          className="ml-4 focus:outline-none w-full"
+          className="ml-4 focus:outline-none w-full bg-transparent"
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
         />

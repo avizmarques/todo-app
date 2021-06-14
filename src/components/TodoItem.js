@@ -13,7 +13,7 @@ export default function TodoItem({ todo }) {
   };
 
   return (
-    <div className="bg-white h-16 px-6 flex items-center justify-between group">
+    <div className="bg-white dark:bg-blue-desaturated dark:text-grayishBlue h-16 px-6 flex items-center justify-between group">
       <div className="flex items-center">
         <CheckBox todo={todo} />
         <div

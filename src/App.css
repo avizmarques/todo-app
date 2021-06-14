@@ -3,11 +3,6 @@
 body {
   font-family: "Josefin Sans", sans-serif;
   font-size: 18px;
-  background-color: hsl(0, 0%, 98%);
-}
-
-.App {
-  text-align: center;
 }
 
 .header {
@@ -16,10 +11,18 @@ body {
   height: 300px;
 }
 
+.dark .header {
+  background-image: url("./assets/bg-mobile-dark.jpg");
+}
+
 @media (min-width: 640px) {
   .header {
     background-image: url("./assets/bg-desktop-light.jpg");
     background-size: cover;
     height: 400px;
+  }
+
+  .dark .header {
+    background-image: url("./assets/bg-desktop-dark.jpg");
   }
 }

@@ -18,11 +18,11 @@ export default function CheckBox({ todo }) {
       onClick={() => toggleChecked(todo.id)}
     >
       {todo.checked ? (
-        <div className="rounded-full h-8 w-8 flex justify-center items-center bg-gradient-to-br from-blue-light to-purple">
+        <div className="rounded-full h-7 w-7 flex justify-center items-center bg-gradient-to-br from-blue-light to-purple">
           <Check />
         </div>
       ) : (
-        <div className="rounded-full border-2 border-grayishBlue-light h-8 w-8" />
+        <div className="rounded-full border-2 border-grayishBlue-light dark:border-grayishBlue-darkest h-7 w-7" />
       )}
     </button>
   );

@@ -5,8 +5,8 @@ export default function FilterBar({ filter, setFilter }) {
     <div className="flex text-sm">
       <button
         className={cn(
-          "mr-2 hover:font-black hover:text-gray-800 focus:outline-none",
-          filter === "all" && "font-black text-gray-800"
+          "mr-2 hover:font-black hover:text-gray-800 focus:outline-none dark:hover:text-white",
+          filter === "all" && "font-black text-gray-800 dark:text-blue"
         )}
         onClick={() => setFilter("all")}
       >
@@ -14,8 +14,8 @@ export default function FilterBar({ filter, setFilter }) {
       </button>
       <button
         className={cn(
-          "mr-2 hover:font-black hover:text-gray-800 focus:outline-none",
-          filter === "active" && "font-black text-gray-800"
+          "mr-2 hover:font-black hover:text-gray-800 focus:outline-none dark:hover:text-white",
+          filter === "active" && "font-black text-gray-800 dark:text-blue"
         )}
         onClick={() => setFilter("active")}
       >
@@ -23,8 +23,8 @@ export default function FilterBar({ filter, setFilter }) {
       </button>
       <button
         className={cn(
-          "hover:font-black hover:text-gray-800 focus:outline-none",
-          filter === "completed" && "font-black text-gray-800"
+          "hover:font-black hover:text-gray-800 focus:outline-none dark:hover:text-white",
+          filter === "completed" && "font-black text-gray-800 dark:text-blue"
         )}
         onClick={() => setFilter("completed")}
       >

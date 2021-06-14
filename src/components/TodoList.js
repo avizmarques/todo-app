@@ -62,8 +62,10 @@ export default function TodoList() {
                   onDragOver={() => onDragOver(i)}
                   onDragEnd={() => onDragEnd()}
                   className={cn(
-                    "border-b-2",
-                    draggedOverIndex === i && "border-grayishBlue-dark"
+                    "border-b",
+                    draggedOverIndex === i
+                      ? "border-grayishBlue-dark dark:border-blue"
+                      : "dark:border-grayishBlue-darkest"
                   )}
                 >
                   <TodoItem todo={todo} />
@@ -77,8 +79,10 @@ export default function TodoList() {
                   onDragOver={() => onDragOver(i)}
                   onDragEnd={() => onDragEnd()}
                   className={cn(
-                    "border-b-2",
-                    draggedOverIndex === i && "border-grayishBlue-dark"
+                    "border-b",
+                    draggedOverIndex === i
+                      ? "border-grayishBlue-dark dark:border-blue"
+                      : "dark:border-grayishBlue-darkest"
                   )}
                 >
                   <TodoItem todo={todo} />
@@ -91,8 +95,10 @@ export default function TodoList() {
                   onDragOver={() => onDragOver(i)}
                   onDragEnd={() => onDragEnd()}
                   className={cn(
-                    "border-b-2",
-                    draggedOverIndex === i && "border-grayishBlue-dark"
+                    "border-b",
+                    draggedOverIndex === i
+                      ? "border-grayishBlue-dark dark:border-blue"
+                      : "dark:border-grayishBlue-darkest"
                   )}
                 >
                   <TodoItem todo={todo} />
@@ -100,13 +106,13 @@ export default function TodoList() {
               ))}
         </ul>
         {list.length > 0 && (
-          <div className="bg-white h-16 flex items-center justify-center sm:justify-between px-6 text-gray-400">
+          <div className="bg-white dark:bg-blue-desaturated h-16 flex items-center justify-center sm:justify-between px-6 text-gray-400">
             <div className="text-sm hidden sm:block">
               {activeList.length} item(s) left
             </div>
             <FilterBar filter={filter} setFilter={setFilter} />
             <button
-              className="text-sm hover:font-black hover:text-gray-800 focus:outline-none hidden sm:block"
+              className="text-sm hover:font-black hover:text-gray-800 focus:outline-none hidden sm:block dark:hover:text-white"
               onClick={clearCompleted}
             >
               Clear completed
@@ -115,7 +121,7 @@ export default function TodoList() {
         )}
       </div>
       {list.length > 0 && (
-        <div className="mt-8 mb-8 text-gray-400 text-sm">
+        <div className="mt-8 mb-8 text-gray-400 text-sm text-center">
           Drag and drop to reorder list
         </div>
       )}
