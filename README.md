@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - [Live site](https://todo-app-two-ruddy.vercel.app/)
-- [Challenge page](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
+- [Challenge page (Frontend Mentor)](https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW)
 
 ## My process
 
